@@ -1,0 +1,197 @@
+.about {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 7px 16px;
+  border: 1px solid var(--border-gold);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--purple);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--purple);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 36px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.bio p {
+  color: var(--text-soft);
+  font-size: 1.02rem;
+  line-height: 1.82;
+}
+
+.goldLine {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 8px;
+}
+
+.quoteCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 40px;
+  background: linear-gradient(
+    145deg,
+    rgba(66, 35, 84, 0.96) 0%,
+    rgba(80, 48, 100, 0.94) 100%
+  );
+  border-radius: 28px;
+  color: var(--white);
+  box-shadow: 0 12px 48px rgba(66, 35, 84, 0.2);
+}
+
+.quoteMark {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 0.6;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.quoteCard p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.08rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.quoteCard strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.quoteRole {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+}
+
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.credentialCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.credentialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.credentialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--gold-subtle);
+  color: var(--purple);
+}
+
+.credentialCard h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--purple);
+  letter-spacing: -0.01em;
+}
+
+.credentialCard p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 920px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credentials {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 72px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .bio,
+  .quoteCard {
+    padding: 28px;
+  }
+
+  .credentialCard {
+    padding: 24px;
+  }
+
+  .heading {
+    margin-bottom: 36px;
+  }
+}
