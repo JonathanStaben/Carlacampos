@@ -259,7 +259,7 @@ Cole o conteudo:
 ```nginx
 server {
     listen 80;
-    server_name 82.25.66.101 srv1487649.hstgr.cloud;
+    server_name carlahematologista.com.br www.carlahematologista.com.br 82.25.66.101 srv1487649.hstgr.cloud;
 
     location / {
         proxy_pass http://127.0.0.1:3000;
@@ -319,6 +319,49 @@ Abra:
 
 - `http://82.25.66.101`
 - `http://srv1487649.hstgr.cloud`
+- `http://carlahematologista.com.br`
+
+## Passo 19. Certificado SSL (HTTPS)
+
+No `AlmaLinux 10`, use `dnf` para instalar o Certbot e o plugin do Nginx:
+
+```bash
+dnf install -y python3-certbot-nginx
+```
+
+Se o pacote nao for encontrado, habilite o EPEL e tente novamente:
+
+```bash
+dnf install -y epel-release
+dnf install -y python3-certbot-nginx
+```
+
+Gere o certificado SSL para o dominio:
+
+```bash
+certbot --nginx -d carlahematologista.com.br -d www.carlahematologista.com.br
+```
+
+O Certbot vai solicitar:
+
+- e-mail (para avisos de renovacao)
+- aceite dos termos (responda `Y`)
+- opcao de receber novidades (pode responder `N`)
+
+O Certbot configura o Nginx automaticamente e redireciona HTTP para HTTPS.
+
+Teste a renovacao automatica:
+
+```bash
+certbot renew --dry-run
+```
+
+Se nao houver erros, a renovacao ja esta configurada (cron ou timer do systemd).
+
+Depois, acesse:
+
+- `https://carlahematologista.com.br`
+- `https://www.carlahematologista.com.br`
 
 ## Atualizacao futura do projeto
 
@@ -515,6 +558,14 @@ firewall-cmd --permanent --add-service=https
 firewall-cmd --reload
 setsebool -P httpd_can_network_connect 1
 systemctl restart nginx
+```
+
+### Certificado SSL (HTTPS)
+
+```bash
+dnf install -y python3-certbot-nginx
+certbot --nginx -d carlahematologista.com.br -d www.carlahematologista.com.br
+certbot renew --dry-run
 ```
 
 ## Observacao final

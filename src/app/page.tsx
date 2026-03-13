@@ -6,6 +6,8 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
+  const siteUrl = "https://carlahematologista.com.br";
+
   const physicianSchema = {
     "@context": "https://schema.org",
     "@type": "Physician",
@@ -13,8 +15,8 @@ export default function Home() {
     medicalSpecialty: ["Hematology"],
     description:
       "Médica hematologista com atuação em hematologia e transplante de medula óssea. Atendimento humanizado e individualizado.",
-    image: "/assets/photos/Foto Carla atualizada.png",
-    url: "/",
+    image: `${siteUrl}/assets/photos/Foto Carla atualizada.png`,
+    url: siteUrl,
   };
 
   return (

@@ -16,6 +16,7 @@ const fallbackSerif = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://carlahematologista.com.br"),
   title: {
     default:
       "Dra. Carla Campos | Médica Hematologista e Transplante de Medula Óssea",
@@ -33,14 +34,31 @@ export const metadata: Metadata = {
     "consulta hematologia",
     "Dra. Carla Campos",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title:
       "Dra. Carla Campos | Médica Hematologista e Transplante de Medula Óssea",
     description:
       "Atendimento especializado em hematologia e transplante de medula óssea com cuidado individualizado e comunicação clara.",
+    url: "https://carlahematologista.com.br",
     type: "website",
     locale: "pt_BR",
     siteName: "Dra. Carla Campos",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Dra. Carla Campos",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -48,10 +66,18 @@ export const metadata: Metadata = {
       "Dra. Carla Campos | Médica Hematologista e Transplante de Medula Óssea",
     description:
       "Atendimento especializado em hematologia e transplante de medula óssea.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
