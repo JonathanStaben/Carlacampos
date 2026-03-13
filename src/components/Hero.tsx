@@ -58,7 +58,7 @@ export function Hero() {
             <div className={styles.photoFrame}>
               <div className={styles.photo}>
                 <Image
-                  src="/assets/photos/Ensaios-Residentes_HC_21.02.2025-5037.JPEG"
+                  src="/assets/photos/Foto Carla atualizada.png"
                   alt="Dra. Carla Campos — Médica Hematologista"
                   fill
                   priority

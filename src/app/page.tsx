@@ -13,7 +13,7 @@ export default function Home() {
     medicalSpecialty: ["Hematology"],
     description:
       "Médica hematologista com atuação em hematologia e transplante de medula óssea. Atendimento humanizado e individualizado.",
-    image: "/assets/photos/Ensaios-Residentes_HC_21.02.2025-5037.JPEG",
+    image: "/assets/photos/Foto Carla atualizada.png",
     url: "/",
   };
 
